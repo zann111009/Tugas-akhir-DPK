@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zan Phone Store</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+/* LOGIN */
+#loginPage{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:linear-gradient(135deg,#3498db,#2ecc71);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+
+.login-box{
+    background:white;
+    width:350px;
+    padding:30px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.login-box h2{
+    margin-bottom:20px;
+}
+
+.login-box input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.login-box button{
+    width:100%;
+    padding:12px;
+    background:#3498db;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.login-box button:hover{
+    background:#2980b9;
+}
+
+#pesan{
+    margin-top:10px;
+    color:red;
+}
+
+/* WEBSITE */
+header{
+    background:#2c3e50;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+nav{
+    background:#34495e;
+    text-align:center;
+    padding:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
+
+.hero{
+    text-align:center;
+    padding:60px 20px;
+    background:linear-gradient(to right,#3498db,#2ecc71);
+    color:white;
+}
+
+.hero h1{
+    font-size:40px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:white;
+    color:#2c3e50;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+.section{
+    padding:40px 20px;
+}
+
+.section h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.produk{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.card{
+    background:white;
+    width:280px;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.harga{
+    color:#27ae60;
+    font-size:20px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+button{
+    background:#3498db;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#2980b9;
+}
+
+footer{
+    background:#2c3e50;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+</style>
+
+</head>
+<body>
+
+<!-- LOGIN -->
+
+<div id="loginPage">
+    <div class="login-box">
+        <h2>Login Zan Phone Store</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="login()">Login</button>
+
+    <p id="pesan"></p>
+
+    <small>
+        Username: admin <br>
+        Password: 12345
+    </small>
+</div>
+
+</div>
+
+<!-- WEBSITE -->
+
+<div id="website" style="display:none;">
+
+<header>
+    <h1>Zan Phone Store</h1>
+    <p>Toko HP Terpercaya dan Berkualitas</p>
+</header>
+
+<nav>
+    <a href="#beranda">Beranda</a>
+    <a href="#produk">Produk</a>
+    <a href="#tentang">Tentang</a>
+    <a href="#kontak">Kontak</a>
+</nav>
+
+<section class="hero" id="beranda">
+    <h1>Promo Smartphone Terbaru</h1>
+    <p>Dapatkan HP impianmu dengan harga terbaik</p>
+    <a href="#produk" class="btn">Lihat Produk</a>
+</section>
+
+<section class="section" id="produk">
+    <h2>Produk Unggulan</h2>
+
+```
+<div class="produk">
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwIdksaYsXRjrXBnvxAKMP5Frexn83-D0qWw&s" alt="Samsung Galaxy A55">
+        <h3>Samsung Galaxy A55</h3>
+        <p>RAM 8GB | Storage 256GB</p>
+        <div class="harga">Rp 5.999.000</div>
+        <button onclick="beli('Samsung Galaxy A55')">Beli Sekarang</button>
+    </div>
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDJ1d_x85H_Hy8OFDyONjHIb2rwBj8nASSTg&s" alt="iPhone 15">
+        <h3>iPhone 15</h3>
+        <p>128GB | Garansi Resmi</p>
+        <div class="harga">Rp 13.999.000</div>
+        <button onclick="beli('iPhone 15')">Beli Sekarang</button>
+    </div>
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoez4szFmHFk6BNV_vMihrap9H_PhXEuJUPw&s" alt="Red Magic">
+        <h3>Red Magic Gaming</h3>
+        <p>RAM 24GB | Storage 1TB</p>
+        <div class="harga">Rp 19.999.000</div>
+        <button onclick="beli('Red Magic Gaming')">Beli Sekarang</button>
+    </div>
+
+</div>
+```
+
+</section>
+
+<section class="section" id="tentang">
+    <h2>Tentang Kami</h2>
+    <p style="text-align:center;">
+        Zan Phone Store menyediakan berbagai smartphone original
+        dengan harga terbaik dan pelayanan profesional.
+    </p>
+</section>
+
+<section class="section" id="kontak">
+    <h2>Kontak</h2>
+    <p style="text-align:center;">
+        WhatsApp: 083124962891 <br>
+        Email: zanstore@gmail.com
+    </p>
+</section>
+
+<footer>
+    <p>&copy; 2026 Zan Phone Store | All Rights Reserved</p>
+</footer>
+
+</div>
+
+<script>
+function login(){
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    if(user === "admin" && pass === "12345"){
+        document.getElementById("loginPage").style.display = "none";
+        document.getElementById("website").style.display = "block";
+    }else{
+        document.getElementById("pesan").innerHTML =
+        "Username atau Password salah!";
+    }
+}
+
+function logout(){
+    document.getElementById("website").style.display = "none";
+    document.getElementById("loginPage").style.display = "flex";
+}
+
+function beli(namaProduk){
+    alert("Terima kasih telah memilih " + namaProduk);
+}
+</script>
+
+</body>
+</html>
